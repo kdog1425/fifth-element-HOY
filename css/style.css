@@ -1,0 +1,16 @@
+body {
+	background-color: #000;
+	margin: 0px;
+	overflow: hidden;
+	background-image:url(../img/desert_04.jpg);
+    background-repeat: no-repeat;
+}
+/*
+img {
+	width: 128px;
+	height: 128px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 1;
+}*/
