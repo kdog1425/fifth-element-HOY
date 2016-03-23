@@ -124,7 +124,7 @@ function init() {
 	    setTimeout(function(){
 
 	    var to = {
-	        x: isMobile ? 2200 : 500,
+	        x: isMobile ? 1500 : 500,
 	        y: camera.position.y + 85,
 	        z: isMobile ? camera.position.z + 320 : camera.position.z + 200
 	    };
