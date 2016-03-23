@@ -163,7 +163,7 @@ function loadFont() {
 
 function addText(text, position, size, rotation){
   var shape = new THREE.TextGeometry(text, {font: font, size: size, bevelThickness: 0.3, bevelSize: 0.6});
-  var wrapper = text == "THE FIFTH ELEMENT" ? new THREE.MeshPhongMaterial({color: 0xFA7A4C}) : new THREE.MeshPhongMaterial({color: 0x70B5DE});
+  var wrapper = text == "THE FIFTH ELEMENT" ? new THREE.MeshPhongMaterial({color: 0xFA7A4C}) : new THREE.MeshPhongMaterial({color: 0x5FA1CA});
   var words = new THREE.Mesh(shape, wrapper);
   words.position.set(position.x,position.y,position.z);
   words.rotation.y += rotation;
