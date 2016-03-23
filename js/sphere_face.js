@@ -126,7 +126,7 @@ function init() {
 	    var to = {
 	        x: isMobile ? 1200 : 300,
 	        y: camera.position.y + 80,
-	        z: isMobile ? camera.position.z + 310 : camera.position.z + 100;
+	        z: isMobile ? camera.position.z + 310 : camera.position.z + 100
 	    };
 		var tween = new TWEEN.Tween(from)
 		    .to(to, 2000)
