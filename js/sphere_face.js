@@ -22,8 +22,8 @@ function init() {
     scene.add( camera ); // since light is child of camera
 
 	controls = new THREE.OrbitControls( camera );
-	controls.minDistance = 50;
-	controls.maxDistance = 300;
+	controls.minDistance = 20;
+	controls.maxDistance = 1300;
     controls.enablePan = false;
 
 	scene.add( new THREE.AmbientLight( 0xffffff, .001 ) );
