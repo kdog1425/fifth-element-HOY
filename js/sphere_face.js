@@ -6,13 +6,14 @@ var image1;
 var image2;
 var light1, light2;
 var angle = 0;
+var isMobile = false;
 
 init();
 animate();
 
 function init() {
 
-    var isMobile = false;
+    isMobile = false;
     if (/Mobi/.test(navigator.userAgent)) {
     	isMobile = true;
 	} 
@@ -152,8 +153,8 @@ function loadFont() {
 	var result;
 	loader.load( 'fonts/' + 'gentilis_bold.typeface.js', function ( response ) {
 		font = response;
-		addText("LITTLE CINEMA", {x: -380, y:0, z:350}, isMobile ? 7 : 112, 1.8);
-		addText("IMMERSIVE", {x:-280, y:-20, z:125}, isMobile ? 4 : 81, 1.8);
+		addText("LITTLE CINEMA", {x: -380, y:0, z:350}, isMobile ? 70 : 112, 1.8);
+		addText("IMMERSIVE", {x:-280, y:-20, z:125}, isMobile ? 41 : 81, 1.8);
 	} );
 }
 
