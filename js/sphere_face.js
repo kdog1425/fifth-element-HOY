@@ -111,10 +111,7 @@ function init() {
     var isMobile = false;
     if (/Mobi/.test(navigator.userAgent)) {
     	isMobile = true;
-    	alert('ismobile');
-	} else {
-		console.log('notmobile');
-	}
+	} 
 	var tween = new TWEEN.Tween(from)
 	    .to(to, 3600)
 	    .easing(TWEEN.Easing.Linear.None)
@@ -127,9 +124,9 @@ function init() {
 	    setTimeout(function(){
 
 	    var to = {
-	        x: isMobile ? 1100 : 500,
+	        x: isMobile ? 1200 : 300,
 	        y: camera.position.y + 80,
-	        z: camera.position.z + 310
+	        z: isMobile ? camera.position.z + 310 : camera.position.z + 100;
 	    };
 		var tween = new TWEEN.Tween(from)
 		    .to(to, 2000)
