@@ -7,6 +7,7 @@ var image2, texture2;
 var light1, light2;
 var angle = 0;
 var isMobile = false;
+var loadCount = 0;
 
 //init();
 //animate();
@@ -46,9 +47,17 @@ function init() {
     
     texture1 = new THREE.Texture( image1 );
     texture2 = new THREE.Texture( image2 );
-    image1.addEventListener( 'load', function ( event ) { texture1.needsUpdate = true; } );
-    image2.addEventListener( 'load', function ( event ) { texture2.needsUpdate = true; 
-    	doIt();
+    image1.addEventListener( 'load', function ( event ) { texture1.needsUpdate = true; 
+    	loadCount++;
+    	if (loadCount == 2){ 
+    		doIt();
+    	}	
+    } );
+    image2.addEventListener( 'load', function ( event ) { texture2.needsUpdate = true;
+    	loadCount++;
+    	if (loadCount == 2){ 
+    		doIt();
+    	}	
     } );
 }
 
