@@ -150,7 +150,7 @@ function init() {
 function loadFont() {
 	var loader = new THREE.FontLoader();
 	var result;
-	loader.load( 'fonts/' + 'gentilis_bold.typeface.js', function ( response ) {
+	loader.load( 'fonts/' + 'helvetiker_bold.typeface.js', function ( response ) {
 		font = response;
 		addText("LITTLE CINEMA No. 10", {x: -380, y:0, z:350}, isMobile ? 70 : 112, 1.67);
 		addText("IMMERSIVE", {x:-280, y:-20, z:125}, isMobile ? 41 : 81, 1.62);
@@ -162,7 +162,7 @@ function loadFont() {
 }
 
 function addText(text, position, size, rotation){
-  var shape = new THREE.TextGeometry(text, {font: font, size: size});
+  var shape = new THREE.TextGeometry(text, {font: font, size: size, bevelThickness: 0.3, bevelSize: 0.6});
   var wrapper = new THREE.MeshPhongMaterial({color: 0xffffff});
   var words = new THREE.Mesh(shape, wrapper);
   words.position.set(position.x,position.y,position.z);
