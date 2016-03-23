@@ -28,13 +28,13 @@ function init() {
 	document.body.appendChild( renderer.domElement );
 	scene = new THREE.Scene();
 	
-	camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 1000 );
+	camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, .1, 3000 );
 	camera.position.set( 200, 0, 0 );
     scene.add( camera ); // since light is child of camera
 
 	controls = new THREE.OrbitControls( camera );
 	controls.minDistance = 50;
-	controls.maxDistance = 600;
+	controls.maxDistance = 300;
     controls.enablePan = false;
 
 	scene.add( new THREE.AmbientLight( 0xffffff, 0.2 ) );
@@ -114,8 +114,8 @@ function loadFont() {
 	console.log('1');
 	loader.load( 'fonts/' + 'gentilis_bold.typeface.js', function ( response ) {
 		font = response;
-		addText("LITTLE CINEMA", {x: -280, y:0, z:350}, 112, 1.8);
-		addText("IMMERSIVE", {x:-180, y:-20, z:125}, 81, 1.8);
+		addText("LITTLE CINEMA", {x: -380, y:0, z:350}, 112, 1.8);
+		addText("IMMERSIVE", {x:-280, y:-20, z:125}, 81, 1.8);
 	} );
 }
 
