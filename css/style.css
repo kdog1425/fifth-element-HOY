@@ -13,6 +13,59 @@ html {
   /*background-size: auto 749px; /* or cover */
 }
 
+@-webkit-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    49% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@-moz-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    49% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@-o-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    49% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+button {
+    -webkit-animation: blink 2s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation: blink 2s;
+    -moz-animation-iteration-count: infinite;
+    -o-animation: blink 2s;
+    -o-animation-iteration-count: infinite;
+}
+
+
 body {
 	margin: 0px;
 	overflow: hidden;
@@ -34,11 +87,12 @@ img {
   /* bring your own prefixes */
   transform: translate(-50%, -50%);
 }
+
 #multipass {
 	opacity:1;
-	-webkit-transition: opacity 3s;
-	-moz-transition: opacity 3s;     
-	transition: opacity 3s; 
+	-webkit-transition: opacity .2s;
+	-moz-transition: opacity .2s;     
+	transition: opacity 0.2s; 
 }
 
 #multipass.fade {
