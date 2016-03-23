@@ -108,6 +108,10 @@ function init() {
         z: 0
     };
 
+    var isMobile = false;
+    if (/Mobi/.test(navigator.userAgent)) {
+    	isMobile = true;
+	}
 	var tween = new TWEEN.Tween(from)
 	    .to(to, 3600)
 	    .easing(TWEEN.Easing.Linear.None)
@@ -118,8 +122,9 @@ function init() {
 	    .onComplete(function () {
 	    camera.lookAt(new THREE.Vector3(0, 0, 0));
 	    setTimeout(function(){
+
 	    var to = {
-	        x: 1000,
+	        x: isMobile ? 1100 : 800,
 	        y: camera.position.y + 80,
 	        z: camera.position.z + 310
 	    };
