@@ -34,7 +34,7 @@ function init() {
 
 	controls = new THREE.OrbitControls( camera );
 	controls.minDistance = 50;
-	controls.maxDistance = 400;
+	controls.maxDistance = 600;
     controls.enablePan = false;
 
 	scene.add( new THREE.AmbientLight( 0xffffff, 0.2 ) );
