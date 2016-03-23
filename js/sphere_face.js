@@ -65,8 +65,9 @@ function init() {
 		map: texture2
 	} );
 
-	var geometry1 = new THREE.SphereGeometry( 30, 32, 16 );
-	var geometry2 = new THREE.SphereGeometry( 30, 32, 16 );
+	var sphere_scale = 1.5;
+	var geometry1 = new THREE.SphereGeometry( 30 * sphere_scale, 32 * sphere_scale, 16  * sphere_scale);
+	var geometry2 = new THREE.SphereGeometry( 30 * sphere_scale, 32 * sphere_scale, 16  * sphere_scale);
 
     // modify UVs to accommodate MatCap texture
 	var faceVertexUvs1 = geometry1.faceVertexUvs[ 0 ];
