@@ -18,7 +18,7 @@ function init() {
 	scene = new THREE.Scene();
 	
 	camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, .1, 3000 );
-	camera.position.set( 200, 0, 0 );
+	camera.position.set( 200, 0, 1000 );
     scene.add( camera ); // since light is child of camera
 
 	controls = new THREE.OrbitControls( camera );
@@ -96,12 +96,53 @@ function init() {
 	
 	loadFont();
 
+	var from = {
+            x: camera.position.x,
+            y: camera.position.y,
+            z: camera.position.z
+        };
+
+    var to = {
+        x: 100,
+        y: 0,
+        z: 0
+    };
+
+	var tween = new TWEEN.Tween(from)
+	    .to(to, 3600)
+	    .easing(TWEEN.Easing.Linear.None)
+	    .onUpdate(function () {
+	    camera.position.set(this.x, this.y, this.z);
+	    camera.lookAt(new THREE.Vector3(0, 0, 0));
+	})
+	    .onComplete(function () {
+	    camera.lookAt(new THREE.Vector3(0, 0, 0));
+	    setTimeout(function(){
+	    var to = {
+	        x: 300,
+	        y: camera.position.y + 60,
+	        z: camera.position.z + 40
+	    };
+		var tween = new TWEEN.Tween(from)
+		    .to(to, 2000)
+		    .easing(TWEEN.Easing.Linear.None)
+		    .onUpdate(function () {
+		    camera.position.set(this.x, this.y, this.z);
+		    camera.lookAt(new THREE.Vector3(0, 0, 0));
+		})
+		    .onComplete(function () {
+		    camera.lookAt(new THREE.Vector3(0, 0, 0));
+		})
+		    .start();
+	    }, 400);
+	})
+	    .start();
+
 }
 
 function loadFont() {
 	var loader = new THREE.FontLoader();
 	var result;
-	console.log('1');
 	loader.load( 'fonts/' + 'gentilis_bold.typeface.js', function ( response ) {
 		font = response;
 		addText("LITTLE CINEMA", {x: -380, y:0, z:350}, 112, 1.8);
@@ -120,6 +161,7 @@ function addText(text, position, size, rotation){
 
 
 function animate() {
+	 TWEEN.update();
 	//mesh1.rotation.x = (23.5/180)*Math.PI;
     mesh1.rotation.y = Date.now() * 0.0003;
     mesh2.rotation.y = Date.now() * 0.0005;
@@ -127,7 +169,6 @@ function animate() {
   
   	light2.position.x = 200+1000*Math.sin(angle);
   	light2.position.z = 200+1000*Math.cos(angle);
-  	console.log(light2.position.x, light2.position.z);
 	requestAnimationFrame(animate);
 
 	//controls.update(); // not required here
