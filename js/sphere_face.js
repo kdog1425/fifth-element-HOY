@@ -11,6 +11,12 @@ init();
 animate();
 
 function init() {
+
+    var isMobile = false;
+    if (/Mobi/.test(navigator.userAgent)) {
+    	isMobile = true;
+	} 
+
 	renderer = new THREE.WebGLRenderer({ antialias: false,alpha:true });
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	renderer.setClearColor(0x000000, 0);
@@ -108,10 +114,6 @@ function init() {
         z: 0
     };
 
-    var isMobile = false;
-    if (/Mobi/.test(navigator.userAgent)) {
-    	isMobile = true;
-	} 
 	var tween = new TWEEN.Tween(from)
 	    .to(to, 3600)
 	    .easing(TWEEN.Easing.Linear.None)
@@ -150,8 +152,8 @@ function loadFont() {
 	var result;
 	loader.load( 'fonts/' + 'gentilis_bold.typeface.js', function ( response ) {
 		font = response;
-		addText("LITTLE CINEMA", {x: -380, y:0, z:350}, 112, 1.8);
-		addText("IMMERSIVE", {x:-280, y:-20, z:125}, 81, 1.8);
+		addText("LITTLE CINEMA", {x: -380, y:0, z:350}, isMobile ? 70 : 112, 1.8);
+		addText("IMMERSIVE", {x:-280, y:-20, z:125}, isMobile ? 41 : 81, 1.8);
 	} );
 }
 
