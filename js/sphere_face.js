@@ -124,9 +124,9 @@ function init() {
 	    setTimeout(function(){
 
 	    var to = {
-	        x: isMobile ? 1300 : 300,
-	        y: camera.position.y + 80,
-	        z: isMobile ? camera.position.z + 210 : camera.position.z + 140
+	        x: isMobile ? 1340 : 300,
+	        y: camera.position.y + 85,
+	        z: isMobile ? camera.position.z + 280 : camera.position.z + 140
 	    };
 		var tween = new TWEEN.Tween(from)
 		    .to(to, 2000)
