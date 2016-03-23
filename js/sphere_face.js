@@ -4,25 +4,14 @@
 var camera, scene, renderer;
 var image1;
 var image2;
+var light1, light2;
+var angle = 0;
 
 init();
 animate();
 
 function init() {
-	info = document.createElement( 'div' );
-	info.style.position = 'absolute';
-	info.style.top = '30px';
-	info.style.width = '100%';
-	info.style.textAlign = 'center';
-	info.style.color = '#fff';
-	info.style.fontWeight = 'bold';
-	info.style.backgroundColor = 'transparent';
-	info.style.zIndex = '1';
-	info.style.fontFamily = 'Monospace';
-	info.innerHTML = 'Drag mouse to rotate camera; scroll to zoom';
-	//document.body.appendChild( info );
-
-    renderer = new THREE.WebGLRenderer({ antialias: false,alpha:true });
+	renderer = new THREE.WebGLRenderer({ antialias: false,alpha:true });
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	renderer.setClearColor(0x000000, 0);
 	document.body.appendChild( renderer.domElement );
@@ -37,13 +26,14 @@ function init() {
 	controls.maxDistance = 300;
     controls.enablePan = false;
 
-	scene.add( new THREE.AmbientLight( 0xffffff, 0.2 ) );
+	scene.add( new THREE.AmbientLight( 0xffffff, .001 ) );
 	
-	var light1 = new THREE.PointLight( 0xeeeeaa, 1 );
+	light1 = new THREE.SpotLight( 0xffffff, 1 );
 	light1.position.set(0,0,0);
-	var light2 = new THREE.PointLight( 0xffffff, 2 );
-	light2.position.set(0,20,1000);
-	camera.add(light2);
+	light2 = new THREE.SpotLight( 0xffffff, 2 );
+	light2.position.set(0,60,0);
+	camera.add(light1);
+	scene.add(light2);
 
     image1 = document.createElement( 'img' );
     document.body.appendChild( image1 );
@@ -133,9 +123,16 @@ function animate() {
 	//mesh1.rotation.x = (23.5/180)*Math.PI;
     mesh1.rotation.y = Date.now() * 0.0003;
     mesh2.rotation.y = Date.now() * 0.0005;
-	requestAnimationFrame( animate );
+    angle -= 0.01;
+  
+  	light2.position.x = 200+1000*Math.sin(angle);
+  	light2.position.z = 200+1000*Math.cos(angle);
+  	console.log(light2.position.x, light2.position.z);
+	requestAnimationFrame(animate);
 
 	//controls.update(); // not required here
+
+	
 
 	render();
 
