@@ -119,9 +119,9 @@ function init() {
 	    camera.lookAt(new THREE.Vector3(0, 0, 0));
 	    setTimeout(function(){
 	    var to = {
-	        x: 800,
-	        y: camera.position.y + 60,
-	        z: camera.position.z + 140
+	        x: 1000,
+	        y: camera.position.y + 80,
+	        z: camera.position.z + 10
 	    };
 		var tween = new TWEEN.Tween(from)
 		    .to(to, 2000)
