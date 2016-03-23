@@ -1,9 +1,9 @@
 html { 
-  background: url(../img/desert_04.jpg); 
+  background: url(../img/desert_04.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: auto 749px; /* or cover */
+  background-size: no-repeat center center fixed 749px; /* or cover */
 }
 
 body {
