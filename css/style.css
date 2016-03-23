@@ -1,0 +1,21 @@
+html { 
+  background: url(../img/desert_04.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {
+	margin: 0px;
+	overflow: hidden;
+}
+/*
+img {
+	width: 128px;
+	height: 128px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 1;
+}*/
