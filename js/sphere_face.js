@@ -104,8 +104,29 @@ function init() {
 	mesh1.position.setZ(-50);  
 	mesh2.position.setZ(50);
 	
+	loadFont();
 
 }
+
+function loadFont() {
+	var loader = new THREE.FontLoader();
+	var result;
+	console.log('1');
+	loader.load( '../fonts/' + 'helvetiker_regular.typeface.js', function ( response ) {
+		font = response;
+		addText();
+	} );
+}
+
+function addText(){
+  var shape = new THREE.TextGeometry("Little Cinema", {font: font});
+  var wrapper = new THREE.MeshNormalMaterial({color: 0x00ff00});
+  var words = new THREE.Mesh(shape, wrapper);
+  words.position.set(-280,50,0);
+  words.rotation.y += 1;
+  scene.add(words);
+}
+
 
 function animate() {
 	//mesh1.rotation.x = (23.5/180)*Math.PI;
