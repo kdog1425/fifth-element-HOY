@@ -152,8 +152,8 @@ function loadFont() {
 	var result;
 	loader.load( 'fonts/' + 'helvetiker_bold.typeface.js', function ( response ) {
 		font = response;
-		addText("LITTLE CINEMA No. 10", {x: -380, y:0, z:350}, isMobile ? 70 : 112, 1.67);
-		addText("THE FIFTH ELEMENT", {x:-280, y:-20, z:125}, isMobile ? 41 : 81, 1.62);
+		addText("LITTLE CINEMA No. 10", {x: -520, y:100, z:370}, isMobile ? 70 : 112, 1.67);
+		addText("THE FIFTH ELEMENT", {x:-280, y:0, z:125}, isMobile ? 41 : 81, 1.62);
 		addText("IMMERSIVE", {x:-180, y:-20, z:-125}, isMobile ? 21 : 41, 1.62);
 		addText("HOUSE OF YES", {x:-180, y:-60, z:325}, isMobile ? 11 : 21, 1.6);
 		addText("MARCH 29, 8PM", {x:-180, y:-70, z:-225}, isMobile ? 16 : 34, 1.6);
