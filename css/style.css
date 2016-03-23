@@ -3,7 +3,7 @@ html {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: no-repeat center center fixed 749px; /* or cover */
+  background-size: no-repeat center center fixed cover; /* or cover */
 }
 
 body {
