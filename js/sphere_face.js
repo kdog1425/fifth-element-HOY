@@ -112,7 +112,7 @@ function loadFont() {
 	var loader = new THREE.FontLoader();
 	var result;
 	console.log('1');
-	loader.load( '../fonts/' + 'helvetiker_regular.typeface.js', function ( response ) {
+	loader.load( 'fonts/' + 'helvetiker_regular.typeface.js', function ( response ) {
 		font = response;
 		addText();
 	} );
