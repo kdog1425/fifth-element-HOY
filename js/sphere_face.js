@@ -154,16 +154,16 @@ function loadFont() {
 		font = response;
 		addText("LITTLE CINEMA No. 10", {x: -520, y:100, z:370}, isMobile ? 70 : 112, 1.67);
 		addText("THE FIFTH ELEMENT", {x:-280, y:0, z:125}, isMobile ? 41 : 81, 1.62);
-		addText("IMMERSIVE", {x:-180, y:-20, z:-125}, isMobile ? 21 : 41, 1.62);
+		addText("IMMERSIVE", {x:-180, y:-20, z:-205}, isMobile ? 16 : 36, 1.62);
 		addText("HOUSE OF YES", {x:-180, y:-60, z:325}, isMobile ? 11 : 21, 1.6);
-		addText("MARCH 29, 8PM", {x:-180, y:-70, z:-225}, isMobile ? 16 : 34, 1.6);
-		addText("AFTERPARTY", {x:-180, y:-90, z:-425}, isMobile ? 11 : 16, 1.6);
+		addText("MARCH 29, 8PM", {x:-180, y:-90, z:-235}, isMobile ? 16 : 34, 1.5);
+		addText("AFTERPARTY", {x:-180, y:-130, z:-285}, isMobile ? 11 : 16, 1.6);
 	} );
 }
 
 function addText(text, position, size, rotation){
   var shape = new THREE.TextGeometry(text, {font: font, size: size, bevelThickness: 0.3, bevelSize: 0.6});
-  var wrapper = new THREE.MeshPhongMaterial({color: 0xffffff});
+  var wrapper = text == "THE FIFTH ELEMENT" ? new THREE.MeshPhongMaterial({color: 0xffff00}) : new THREE.MeshPhongMaterial({color: 0xffffff});
   var words = new THREE.Mesh(shape, wrapper);
   words.position.set(position.x,position.y,position.z);
   words.rotation.y += rotation;
