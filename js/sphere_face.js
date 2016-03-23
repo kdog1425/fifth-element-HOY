@@ -119,7 +119,7 @@ function init() {
 	    camera.lookAt(new THREE.Vector3(0, 0, 0));
 	    setTimeout(function(){
 	    var to = {
-	        x: 300,
+	        x: 800,
 	        y: camera.position.y + 60,
 	        z: camera.position.z + 40
 	    };
