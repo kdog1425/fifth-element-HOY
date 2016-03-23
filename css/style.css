@@ -26,3 +26,29 @@ img {
 	top: 0px;
 	z-index: 1;
 }*/
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+#multipass {
+	opacity:1;
+	-webkit-transition: opacity 3s;
+	-moz-transition: opacity 3s;     
+	transition: opacity 3s; 
+}
+
+#multipass.fade {
+	opacity:0;
+}
+
+#multipass_btn {
+  cursor: pointer; cursor: hand;
+}
+
+*:focus {
+    outline: none;
+}

@@ -14,9 +14,12 @@
 </head>
 
 <body>
-	<script src="http://threejs.org/build/three.min.js"></script>
-	<script src="http://threejs.org/examples/js/controls/OrbitControls.js"></script>
-	<script src="http://threejs.org/examples/js/libs/tween.min.js"></script>
+	<div id="multipass" class="centered">
+	<button id="multipass_btn" onclick="init()" style="background-image: url(img/multipass.png); height: 189px; width: 796px; border: none; opacity: 0.5;" ></button>
+	</div>
+	<script src="js/three.min.js"></script>
+	<script src="js/OrbitControls.js"></script>
+	<script src="js/tween.min.js"></script>
 
 	<script id="vertex_shader" type="x-shader/x-vertex">
 		varying vec3 vNormal;
@@ -35,6 +38,10 @@
 			if ( vNormal.z < - 0.85 ) color = vec3( 0.777, 0.74, 0.74 ); // back of eye
 			gl_FragColor = vec4( color, 1.0 );
 		}
+	</script>
+
+	<script>
+
 	</script>
 	<script src="js/sphere_face.js"></script>
 </body>
