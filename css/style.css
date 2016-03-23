@@ -3,7 +3,7 @@ html {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: auto 1400px; /* or cover */
+  background-size: fixed 749px; /* or cover */
 }
 
 body {
