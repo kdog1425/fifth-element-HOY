@@ -121,7 +121,7 @@ function init() {
 	    var to = {
 	        x: 1000,
 	        y: camera.position.y + 80,
-	        z: camera.position.z + 10
+	        z: camera.position.z + 310
 	    };
 		var tween = new TWEEN.Tween(from)
 		    .to(to, 2000)
