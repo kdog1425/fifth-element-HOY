@@ -111,6 +111,9 @@ function init() {
     var isMobile = false;
     if (/Mobi/.test(navigator.userAgent)) {
     	isMobile = true;
+    	alert('ismobile');
+	} else {
+		console.log('notmobile');
 	}
 	var tween = new TWEEN.Tween(from)
 	    .to(to, 3600)
