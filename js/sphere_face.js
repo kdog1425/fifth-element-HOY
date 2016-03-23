@@ -12,15 +12,6 @@ var isMobile = false;
 //animate();
 
 function init() {
-	var manager = new THREE.LoadingManager();
-	manager.onProgress = function(item, loaded, total){
-		console.log(item, loaded, total);
-	}
-
-	THREE.DefaultLoadingManager.onProgress = function ( item, loaded, total ) {
-    console.log( item, loaded, total );
-	};
-
 	renderer = new THREE.WebGLRenderer({ antialias: false,alpha:true });
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	renderer.setClearColor(0x000000, 0);
@@ -59,10 +50,6 @@ function init() {
     image2.addEventListener( 'load', function ( event ) { texture2.needsUpdate = true; 
     	doIt();
     } );
-
-	
-	
-
 }
 
 function doIt(){
@@ -113,6 +100,9 @@ function doIt(){
 
 	var multi = document.getElementById('multipass');
 	multi.classList.toggle('fade');
+	setTimeout(function(){
+		multi.style.visibility='hidden';
+	}, 2000);
 	var multi_btn = document.getElementById('multipass_btn');
 	multi_btn.disabled = true;
 
