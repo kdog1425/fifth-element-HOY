@@ -20,7 +20,7 @@ function init() {
 	info.style.zIndex = '1';
 	info.style.fontFamily = 'Monospace';
 	info.innerHTML = 'Drag mouse to rotate camera; scroll to zoom';
-	document.body.appendChild( info );
+	//document.body.appendChild( info );
 
     renderer = new THREE.WebGLRenderer({ antialias: false,alpha:true });
 	renderer.setSize( window.innerWidth, window.innerHeight );
@@ -112,18 +112,19 @@ function loadFont() {
 	var loader = new THREE.FontLoader();
 	var result;
 	console.log('1');
-	loader.load( 'fonts/' + 'helvetiker_regular.typeface.js', function ( response ) {
+	loader.load( 'fonts/' + 'gentilis_bold.typeface.js', function ( response ) {
 		font = response;
-		addText();
+		addText("LITTLE CINEMA", {x: -280, y:0, z:350}, 112, 1.8);
+		addText("IMMERSIVE", {x:-180, y:-20, z:125}, 81, 1.8);
 	} );
 }
 
-function addText(){
-  var shape = new THREE.TextGeometry("Little Cinema", {font: font});
-  var wrapper = new THREE.MeshNormalMaterial({color: 0x00ff00});
+function addText(text, position, size, rotation){
+  var shape = new THREE.TextGeometry(text, {font: font, size: size});
+  var wrapper = new THREE.MeshPhongMaterial({color: 0xffffff});
   var words = new THREE.Mesh(shape, wrapper);
-  words.position.set(-280,50,0);
-  words.rotation.y += 1;
+  words.position.set(position.x,position.y,position.z);
+  words.rotation.y += rotation;
   scene.add(words);
 }
 
