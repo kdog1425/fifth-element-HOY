@@ -98,6 +98,15 @@ img {
 	text-align: center; 
 }
 
+#multipass-outer {
+	padding: 10px;
+}
+
+#multipass-inner {
+	margin: 0 auto;
+     width: 100%; 
+}
+
 #multipass.fade {
 	opacity:0;
 }
