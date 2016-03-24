@@ -70,6 +70,7 @@ body {
 	width: 100%;
 	margin: 0px;
 	overflow: hidden;
+	display: table;
 }
 /*
 img {
@@ -82,15 +83,17 @@ img {
 }*/
 
 .centered {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  /* bring your own prefixes */
-  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
 }
 
 #multipass {
-	width: 100%;
+	height: 100px;
+	width: 750px;
 	opacity:1;
 	-webkit-transition: opacity .2s;
 	-moz-transition: opacity .2s;     
