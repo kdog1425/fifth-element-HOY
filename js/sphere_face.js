@@ -153,7 +153,7 @@ for (i = 0; i < images.length;i++ ) {
 	    setTimeout(function(){
 
 	    var to = {
-	        x: isMobile ? 1600 : 650,
+	        x: isMobile ? 1600 : 670,
 	        y: camera.position.y + 85,
 	        z: isMobile ? camera.position.z + 1200 : camera.position.z + 330
 	    };
