@@ -62,6 +62,10 @@ function init() {
 }
 
 function doIt(){
+	var images = document.getElementsByTagName('img');
+for (i = 0; i < images.length;i++ ) {
+    images[i].style.display = "none";
+}
 	var material1 = new THREE.MeshPhongMaterial( {
 		color: 0xeeeeee, 
 		specular: 0x111111,
