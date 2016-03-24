@@ -153,9 +153,9 @@ for (i = 0; i < images.length;i++ ) {
 	    setTimeout(function(){
 
 	    var to = {
-	        x: isMobile ? 1500 : 600,
+	        x: isMobile ? 1600 : 650,
 	        y: camera.position.y + 85,
-	        z: isMobile ? camera.position.z + 1000 : camera.position.z + 300
+	        z: isMobile ? camera.position.z + 1200 : camera.position.z + 330
 	    };
 		var tween = new TWEEN.Tween(from)
 		    .to(to, 2000)
