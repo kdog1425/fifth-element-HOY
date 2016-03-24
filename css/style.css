@@ -104,7 +104,7 @@ img {
 
 #multipass-inner {
 	margin: 0 auto;
-    width: 30px; 
+    width: 100%; 
 }
 
 #multipass.fade {
