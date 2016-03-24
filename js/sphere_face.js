@@ -155,7 +155,7 @@ for (i = 0; i < images.length;i++ ) {
 	    var to = {
 	        x: isMobile ? 1600 : 670,
 	        y: camera.position.y + 85,
-	        z: isMobile ? camera.position.z + 1200 : camera.position.z + 330
+	        z: isMobile ? camera.position.z + 1200 : camera.position.z + 350
 	    };
 		var tween = new TWEEN.Tween(from)
 		    .to(to, 2000)
