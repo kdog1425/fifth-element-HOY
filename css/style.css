@@ -90,7 +90,7 @@ img {
 
 #multipass {
 	height: 100px;
-	width: 100%;
+	width: 700px;
 	opacity:1;
 	-webkit-transition: opacity .2s;
 	-moz-transition: opacity .2s;     
